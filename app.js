@@ -1,8 +1,11 @@
+import express from "express";
+import dotenv from "dotenv";
+import schoolRoutes from "./routes/schoolRoutes.js";
 
-const express = require("express");
+dotenv.config();
+
 const app = express();
-const port = 3000;
-const schoolRoutes = require("./routes/schoolRoutes");
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use("/api", schoolRoutes);
